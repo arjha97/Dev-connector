@@ -63,7 +63,7 @@ const AddEducation = ({ addEducation, history }) => {
           value={current}
           onChange={e => {setFormData({ ...formData, current: !current})
            toggleDisabled(!toDateDisabled);
-          }}/>{' '} Current Job</p>
+          }}/>{' '} Current School</p>
         </div>
         <div class="form-group">
           <h4>To Date</h4>
@@ -92,4 +92,4 @@ AddEducation.propTypes = {
  addEducation: PropTypes.func.isRequired,
 }
 
-export default connect(null, { addEducation })(AddEducation);
+export default connect(null, { addEducation })(withRouter(AddEducation));
