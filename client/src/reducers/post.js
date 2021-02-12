@@ -1,7 +1,8 @@
-import { DELETE_ACCOUNT, DELETE_POST, GET_PROFILE, UPDATE_LIKES } from '../actions/types';
+
 import {
     GET_POSTS,
-    POST_ERROR
+    POST_ERROR,
+    ADD_POST, DELETE_POST , UPDATE_LIKES
 } from '../actions/types';
 
 
@@ -22,6 +23,12 @@ export default function(state = initialState, action) {
                 posts: payload,
                 loading: false
             }
+        case ADD_POST:
+            return {
+                ...state,
+                posts: {payload, ...state.posts},
+                loading: false
+            }    
         case DELETE_POST:
             return{
                 ...state,
